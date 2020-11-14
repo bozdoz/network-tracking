@@ -3,8 +3,10 @@ module bozdoz.com/network
 go 1.14
 
 replace bozdoz.com/spreadsheet => ./spreadsheet
+replace bozdoz.com/logger => ./logger
 
 require (
+	bozdoz.com/logger v0.0.0-00010101000000-000000000000
 	bozdoz.com/spreadsheet v0.0.0-00010101000000-000000000000
 	cloud.google.com/go v0.71.0 // indirect
 	golang.org/x/net v0.0.0-20201031054903-ff519b6c9102
