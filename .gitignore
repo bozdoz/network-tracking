@@ -3,3 +3,5 @@ credentials.json
 app
 # go build creates network
 network
+# log file for failed/offline attempts
+offline.log
