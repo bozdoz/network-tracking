@@ -1,6 +1,8 @@
 package main
 
 import (
+	"fmt"
+	"log"
 	"strings"
 	"time"
 
@@ -19,6 +21,15 @@ func main() {
 		row := [2]string{input[0], input[1]}
 		online, success = addToSpreadsheet(row)
 
+		// remove line from log if added
+		if success {
+			err := logger.RemoveLines(offlineLog, 1, 1)
+
+			if err != nil {
+				log.Fatal("Failed to remove lines from log file")
+			}
+		}
+
 		// loop breaks if false
 		return online && success
 	})
@@ -34,13 +45,16 @@ func main() {
 	}
 
 	if !online {
-		row[1] = "no"
+		connected = "no"
+		row[1] = connected
 	}
 
 	if !success {
 		// write all failures to the offline log
 		logger.WriteToLog(offlineLog, row)
 	}
+
+	fmt.Printf("\nAttempted to add to spreadsheet.\n\nconnected: %s\nsuccess: %t\n", connected, success)
 }
 
 func addToSpreadsheet(row [2]string) (online bool, success bool) {

@@ -46,8 +46,8 @@ func WriteToLog(logFile string, row [2]string) {
 	}
 }
 
-// TODO: Use this to remove added lines from log
-func removeLines(fn string, start, n int) (err error) {
+// RemoveLines removes lines from a logfile
+func RemoveLines(fn string, start, n int) (err error) {
 	if start < 1 {
 		return errors.New("invalid request.  line numbers start at 1")
 	}
