@@ -1,0 +1,12 @@
+.devcontainer/
+.vscode/
+.env
+.git*
+network
+
+Dockerfile
+.dockerignore
+offline.log
+README.md
+LICENSE
+docker*
