@@ -12,7 +12,7 @@ import (
 
 // ForEachLineInLog does what it says
 func ForEachLineInLog(logFile string, f func(line string) bool) {
-	file, err := os.Open(logFile)
+	file, err := os.OpenFile(logFile, os.O_RDONLY|os.O_CREATE, 0644)
 	if err != nil {
 		log.Fatal(err)
 	}
