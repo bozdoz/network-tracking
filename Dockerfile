@@ -20,6 +20,8 @@ FROM alpine
 
 WORKDIR /app
 
+RUN apk add --no-cache tzdata
+
 COPY --from=build /app/network /app
 COPY --from=build /app/credentials.json /app
 

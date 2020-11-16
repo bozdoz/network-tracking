@@ -8,9 +8,11 @@ Runs a cron job to update network status to google spreadsheet; tracking (signif
   - Credentials.json must be of type "service_account"
   - See: https://console.cloud.google.com/iam-admin/serviceaccounts/details/
 
-2. Create `.env` in root with SPREADSHEET_ID=abcdef
-  - get spreadsheet id from spreadsheet URL: 
-    - https://docs.google.com/spreadsheets/d/{spreadsheetID}/edit
+2. Create `.env` in root with:
+  - SPREADSHEET_ID=abcdef
+      - get spreadsheet id from spreadsheet URL: 
+          - https://docs.google.com/spreadsheets/d/{spreadsheetID}/edit
+  - TZ=America/Halifax (your timezone)
   
 3. Develop in VSCode Remote Containers (ms-vscode-remote.remote-containers)
 

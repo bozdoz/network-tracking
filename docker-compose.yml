@@ -6,3 +6,5 @@ services:
       context: .
       args:
         - SPREADSHEET_ID
+    environment:
+      - TZ
